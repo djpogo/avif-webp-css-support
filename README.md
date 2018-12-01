@@ -1,40 +1,8 @@
 WebP Support
 ==============
 
-[![Bower version](https://badge.fury.io/bo/webp-support.svg)](https://badge.fury.io/bo/webp-support)
-[![npm version](https://badge.fury.io/js/webp-detect.svg)](https://badge.fury.io/js/webp-detect)
-[![npm](https://img.shields.io/npm/dt/webp-detect.svg)](https://github.com/vitaliy-bobrov/webp-detect)
+[![npm](https://img.shields.io/npm/dt/webp-detect.svg)](https://github.com/djpogo/webp-support)
 
-A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.
+A fork of [vitaly-bobrov/webp-detect](https://github.com/vitaliy-bobrov/webp-detect) pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to html element if supported.
 
 What is WebP? - [Answer](https://developers.google.com/speed/webp/)
-
-## Bower
-
-  ```bash
-  bower install --save webp-support
-  ```
-
-## npm
-
-  ```bash
-  npm install --save webp-detect
-  ```
-
-## Usage
-
-Include the script in your HTML
-
-  ```html
-  <script src="bower_components/webp-support/webp.min.js"></script>
-  ```
-
-  or add to your bundle:
-
-  ```js
-  require('webp-detect');
-  ```
-
-If browser support webp format it'll add the `webp` class to body tag.
-
-Also you can import ES2015 version in your scripts.
