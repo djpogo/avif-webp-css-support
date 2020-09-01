@@ -8,8 +8,13 @@
   var avifClass = 'avif';
 
   function alreadyTested(format) {
-    return !!window.sessionStorage
-        && window.sessionStorage.getItem(format + 'Support') === 'true';
+    if (!!window.sessionStorage) {
+      var test = window.sessionStorage.getItem(format + 'Support');
+      if (test === 'false' || test === 'true') {
+        return test === 'true';
+      }
+    }
+    return null;
   }
 
   /**
@@ -19,16 +24,18 @@
    * @param {Function} callback - Callback function.
    */
   function testFormat(format, imageSrc, callback) {
-    if (alreadyTested(format)) {
-      addClass(format, true);
+    var tested = alreadyTested(format);
+
+    if (tested === null) {
+      var image = new Image();
+
+      image.onload = image.onerror = function () {
+        callback(format, image.height === 2);
+      };
+      image.src = imageSrc;
       return;
     }
-    var image = new Image();
-
-    image.onload = image.onerror = function () {
-      callback(format, image.height === 2);
-    };
-    image.src = imageSrc;
+    addClass(format, tested);
   };
 
   /**
@@ -44,6 +51,8 @@
         el.className += " " + format === 'webp' ? webpClass : avifClass;
       }
       window.sessionStorage.setItem(format + 'Support', true);
+    } else {
+      window.sessionStorage.setItem(format + 'Support', false);
     }
 }
 
