@@ -6,10 +6,72 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- for production use add contents of webp.min.js as inline script -->
         <script src="./avif-webp.min.js"></script>
+        <style>
+            .picture,
+            .background {
+                width: 320px;
+                height: auto;
+                display: block;
+            }
+            .picture img {
+                width: 100%;
+            }
+            .row {
+                display: flex;
+            }
+            .row > div {
+                margin: 10px;
+            }
+
+            .background {
+                height: 240px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('demo-assets/png.png');
+            }
+            .webp .background {
+                background-image: url('demo-assets/webp.webp');
+            }
+            .avif .background {
+                background-image: url('demo-assets/avif.avif');
+            }
+        </style>
     </head>
     <body>
         <h1>avif / webp test</h1>
         <pre id="console"></pre>
+        <h2>CSS background</h2>
+        <div class="background">&nbsp;</div>
+        <h2><code>picture</code> elements</h2>
+        <div class="row">
+            <div>
+                <h2><code>picture</code> element with avif as first source</h2>
+                <picture class="picture">
+                    <source type="image/avif" srcset="demo-assets/avif.avif 1x">
+                    <source type="image/webp" srcset="demo-assets/webp.webp 1x">
+                    <source type="image/png" srcset="demo-assets/png.png 1x">
+                    <img src="demo-assets/png.png">
+                </picture>
+            </div>
+            <div>
+                <h2><code>picture</code> element with webp as first source</h2>
+                <picture class="picture">
+                    <source type="image/webp" srcset="demo-assets/webp.webp 1x">
+                    <source type="image/avif" srcset="demo-assets/avif.avif 1x">
+                    <source type="image/png" srcset="demo-assets/png.png 1x">
+                    <img src="demo-assets/png.png">
+                </picture>
+            </div>
+            <div>
+                <h2><code>picture</code> element with png as first source</h2>
+                <picture class="picture">
+                    <source type="image/png" srcset="demo-assets/png.png 1x">
+                    <source type="image/webp" srcset="demo-assets/webp.webp 1x">
+                    <source type="image/avif" srcset="demo-assets/avif.avif 1x">
+                    <img src="demo-assets/png.png">
+                </picture>
+            </div>
+        </div>
         <script>
             window.addEventListener('load', function() {
                 var avifSupport = document.documentElement.classList.contains('avif');
