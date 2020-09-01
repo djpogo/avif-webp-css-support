@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>avif/webp support demo page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!-- for production use add contents of webp.min.js as inline script -->
+        <script src="./avif-webp.min.js"></script>
+    </head>
+    <body>
+        <h1>avif / webp test</h1>
+        <pre id="console"></pre>
+        <script>
+            window.addEventListener('load', function() {
+                var avifSupport = document.documentElement.classList.contains('avif');
+                var webpSupport = document.documentElement.classList.contains('webp');
+                var console = document.querySelector('#console');
+                console.innerText = 'This Browser supports ';
+                console.innerText += 'avif: ' + (avifSupport ? '✔' : '✖');
+                console.innerText += ', webp:' + (webpSupport ? '✔' : '✖');
+            });
+        </script>
+    </body>
+</html>

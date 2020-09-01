@@ -1,7 +1,7 @@
 {
-  "name": "webp-detect",
-  "version": "1.0.4",
-  "description": "Simple script to check browser support of webp images format.",
+  "name": "avif-webp-detect",
+  "version": "1.0.0",
+  "description": "Simple script to check browser support of webp and avif images format.",
   "main": "webp.js",
   "repository": {
     "type": "git",
