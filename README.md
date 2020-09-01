@@ -11,6 +11,7 @@ classes (`.webp`, `.avif`) to the `<html>` element.
 When the user updates his browser and become capable of webp and or avif your code will automatically enhance the user experience.
 
 More information about this script can be found [here](https://raoulkramer.de/avif-and-webp-images-as-css-background-images).
+And a working demo page of this repository is available [here](https://avif-webp.raoulkramer.de/).
 
 ## setup
 copy all contents of [avif-webp.min.js](./avif-webp.min.js) into an inline script in your page and this script 
