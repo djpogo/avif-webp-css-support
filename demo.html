@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- for production use add contents of webp.min.js as inline script -->
         <script src="./avif-webp.min.js"></script>
+        <link rel="icon" type="image/x-icon" href="demo-assets/favicon.ico">
+        <link rel="shortcut icon" type="image/png" href="/demo-assets/favicon.png" />
         <style>
+            html, body {
+                font-family: sans-serif;
+            }
             .picture,
             .background {
                 width: 320px;
@@ -39,6 +44,10 @@
     </head>
     <body>
         <h1>avif / webp test</h1>
+        <p>This is the demo page of
+            <a href="https://github.com/djpogo/webp-inline-support" target="_blank" rel="noopener noreferrer">webp-inline-support</a> repository and of this
+            <a href="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/" target="_blank" rel="noopener">blog post</a>
+        </p>
         <pre id="console"></pre>
         <h2>CSS background</h2>
         <div class="background">&nbsp;</div>
@@ -79,7 +88,7 @@
                 var console = document.querySelector('#console');
                 console.innerText = 'This Browser supports ';
                 console.innerText += 'avif: ' + (avifSupport ? '✔' : '✖');
-                console.innerText += ', webp:' + (webpSupport ? '✔' : '✖');
+                console.innerText += ', webp: ' + (webpSupport ? '✔' : '✖');
             });
         </script>
     </body>
