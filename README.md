@@ -10,6 +10,7 @@ classes (`.webp`, `.avif`) to the `<html>` element.
 **Webp** and **avif** detection is stored in the `sessionStorage` object, and only executed on the first session impression.
 When the user updates his browser and become capable of webp and or avif your code will automatically enhance the user experience.
 
+More information about this script can be found [here](https://raoulkramer.de/avif-and-webp-images-as-css-background-images).
 
 ## setup
 copy all contents of [avif-webp.min.js](./avif-webp.min.js) into an inline script in your page and this script 
