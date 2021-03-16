@@ -7,6 +7,8 @@
   var webpClass = 'webp';
   var avifClass = 'avif';
 
+  console.info('avif-web.js: please consider to remove this script and switch to `background-image: image-set();` @see https://bit.ly/3bP3Dov');
+
   function alreadyTested(format) {
     if (!!window.sessionStorage) {
       var test = window.sessionStorage.getItem(format + 'Support');
