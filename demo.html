@@ -15,7 +15,8 @@
                 color: #464646;
             }
             .picture,
-            .background {
+            .background,
+            .image-set-background {
                 width: 320px;
                 height: auto;
                 display: block;
@@ -39,7 +40,32 @@
             <a href="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/" target="_blank" rel="noopener">blog post</a>
         </p>
         <pre id="console"></pre>
-        <h2>CSS avif/webp background image</h2>
+        <section>
+            <h2>&gt;= 2021: CSS avif/webp background with image-set (progressive enhancement)</h2>
+            <div class="row">
+                <div class="image-set-background">&nbsp;</div>
+                <style style="display: block; white-space: pre-wrap; font-family: monospace; border: 1px dashed #464646">
+.image-set-background {
+    background-image: url('demo-assets/png.png'); /* fallback for non image-set browser */
+    background-image: -webkit-image-set(
+        url("demo-assets/avif.avif") 1x /* type("image/avif") */,
+        url("demo-assets/webp.webp") 1x /* type("image/webp") */, 
+        url("demo-assets/png.png") 1x /* type("image/png") */
+    );
+    background-image: image-set(
+        url("demo-assets/avif.avif") 1x,
+        url("demo-assets/webp.webp") 1x,
+        url("demo-assets/png.png") 1x
+    );
+    height: 240px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+                </style>
+            </div>
+        </section>
+        <section>
+        <h2>&lt; 2021: CSS avif/webp background image</h2>
         <div class="row">
             <div class="background">&nbsp;</div>
 <style style="display: block; white-space: pre-wrap; font-family: monospace; border: 1px dashed #464646">
@@ -58,6 +84,7 @@
 }
 </style>
         </div>
+        </section>
         <h2><code>picture</code> elements</h2>
         <div class="row">
             <div>
