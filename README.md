@@ -1,6 +1,6 @@
 # avif / webp support for css background images
 
-> **🛈 important information** please have a look at my [latest blog post](avif-webp-images-css-background-usage-progressive-enhanced-with-image-set) about avif/web `background-image: image-set()` usage. I updated the [avif/webp demo page](https://avif-webp.raoulkramer.de/) too.
+> **🛈 important information** please have a look at my [latest blog post](https://raoulkramer.de/avif-webp-images-css-background-usage-progressive-enhanced-with-image-set/) about avif/web `background-image: image-set()` usage. I updated the [avif/webp demo page](https://avif-webp.raoulkramer.de/) too.
 
 > A fork of [vitaly-bobrov/webp-detect](https://github.com/vitaliy-bobrov/webp-detect) pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to html element if supported.
 > What is WebP? - [Answer](https://developers.google.com/speed/webp/)
